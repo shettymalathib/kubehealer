@@ -4,6 +4,7 @@ import sys
 from dotenv import load_dotenv
 from temporalio.client import Client
 from temporalio.service import RPCError
+from temporalio.common import WorkflowIDReusePolicy
 
 load_dotenv()
 
@@ -31,16 +32,17 @@ async def terminate_stale_workflow(client: Client):
         pass
 
 
+
 async def get_or_start_workflow(client: Client, namespace: str):
     try:
         handle = client.get_workflow_handle(WORKFLOW_ID)
 
-        # Query succeeds only if workflow is still running
+        # Existing workflow still running?
         await handle.query(ConversationWorkflow.get_state)
         return handle, False
 
     except Exception:
-        # Start a brand new execution
+        # Start a fresh workflow if the old one is gone/terminated
         handle = await client.start_workflow(
             ConversationWorkflow.run,
             ConversationInput(
@@ -49,11 +51,8 @@ async def get_or_start_workflow(client: Client, namespace: str):
             ),
             id=WORKFLOW_ID,
             task_queue="kubehealer",
-
-            # <-- THIS IS THE IMPORTANT PART
-            id_reuse_policy="ALLOW_DUPLICATE",
+            id_reuse_policy=WorkflowIDReusePolicy.ALLOW_DUPLICATE,
         )
-
         return handle, True
 
 async def main():
