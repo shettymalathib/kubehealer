@@ -32,20 +32,29 @@ async def terminate_stale_workflow(client: Client):
 
 
 async def get_or_start_workflow(client: Client, namespace: str):
-    """Reconnect to an existing conversation or start a new one."""
     try:
         handle = client.get_workflow_handle(WORKFLOW_ID)
+
+        # Query succeeds only if workflow is still running
         await handle.query(ConversationWorkflow.get_state)
         return handle, False
-    except RPCError:
+
+    except Exception:
+        # Start a brand new execution
         handle = await client.start_workflow(
             ConversationWorkflow.run,
-            ConversationInput(namespace=namespace, session_id=WORKFLOW_ID),
+            ConversationInput(
+                namespace=namespace,
+                session_id=WORKFLOW_ID,
+            ),
             id=WORKFLOW_ID,
             task_queue="kubehealer",
-        )
-        return handle, True
 
+            # <-- THIS IS THE IMPORTANT PART
+            id_reuse_policy="ALLOW_DUPLICATE",
+        )
+
+        return handle, True
 
 async def main():
     client = await Client.connect("localhost:7233")

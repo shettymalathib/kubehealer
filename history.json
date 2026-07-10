@@ -1,0 +1,345 @@
+{
+  "events": [
+    {
+      "eventId": "1",
+      "eventTime": "2026-07-10T12:31:19.199286535Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_STARTED",
+      "taskId": "1048788",
+      "workflowExecutionStartedEventAttributes": {
+        "workflowType": {
+          "name": "ConversationWorkflow"
+        },
+        "taskQueue": {
+          "name": "kubehealer",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJoZWFsaW5nX2RlY2lzaW9ucyI6e30sImhlYWxpbmdfZGlhZ25vc2VzIjpbXSwibWVzc2FnZXMiOltdLCJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2Vzc2lvbl9pZCI6Imt1YmVoZWFsZXItY29udmVyc2F0aW9uIiwidHVybl9jb3VudCI6MH0="
+            }
+          ]
+        },
+        "workflowTaskTimeout": "10s",
+        "originalExecutionRunId": "019f4c02-ca9f-744d-8ee8-75fdf9d19f87",
+        "identity": "38338@Deepak",
+        "firstExecutionRunId": "019f4c02-ca9f-744d-8ee8-75fdf9d19f87",
+        "attempt": 1,
+        "firstWorkflowTaskBackoff": "0s",
+        "workflowId": "kubehealer-conversation",
+        "priority": {}
+      }
+    },
+    {
+      "eventId": "2",
+      "eventTime": "2026-07-10T12:31:19.203100448Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1048789",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "kubehealer",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "3",
+      "eventTime": "2026-07-10T12:31:19.238135225Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1048794",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "2",
+        "identity": "37356@Deepak",
+        "requestId": "8fbf254e-004d-48bc-8dac-dcc2080f4ea7",
+        "historySizeBytes": "414",
+        "workerVersion": {
+          "buildId": "61065c3d2406bf8de64eb171c10925cf"
+        }
+      }
+    },
+    {
+      "eventId": "4",
+      "eventTime": "2026-07-10T12:31:19.365826801Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1048798",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "2",
+        "startedEventId": "3",
+        "identity": "37356@Deepak",
+        "workerVersion": {
+          "buildId": "61065c3d2406bf8de64eb171c10925cf"
+        },
+        "sdkMetadata": {
+          "coreUsedFlags": [
+            2,
+            3,
+            1
+          ],
+          "sdkName": "temporal-python",
+          "sdkVersion": "1.30.0"
+        },
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "5",
+      "eventTime": "2026-07-10T12:31:30.602565144Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1048805",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "37356@Deepak-d9fad90d041c41e0abb619e767d5f995",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "kubehealer"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "6",
+      "eventTime": "2026-07-10T12:31:30.608439967Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1048806",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "5",
+        "identity": "37356@Deepak",
+        "requestId": "39626a11-76da-44bd-b7db-43b30f9f94bb",
+        "historySizeBytes": "646",
+        "workerVersion": {
+          "buildId": "61065c3d2406bf8de64eb171c10925cf"
+        }
+      }
+    },
+    {
+      "eventId": "7",
+      "eventTime": "2026-07-10T12:31:30.645033640Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1048807",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "5",
+        "startedEventId": "6",
+        "identity": "37356@Deepak",
+        "workerVersion": {
+          "buildId": "61065c3d2406bf8de64eb171c10925cf"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "8",
+      "eventTime": "2026-07-10T12:31:30.647121947Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1048808",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "f4bbe455-59c2-40e7-aefa-948e2c17669c",
+        "acceptedRequestMessageId": "f4bbe455-59c2-40e7-aefa-948e2c17669c/request",
+        "acceptedRequestSequencingEventId": "5",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "f4bbe455-59c2-40e7-aefa-948e2c17669c",
+            "identity": "38338@Deepak"
+          },
+          "input": {
+            "name": "send_message",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "ImhvdyBtYW55IHBvZHMgYXJlIHJ1bm5pbmc/Ig=="
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "9",
+      "eventTime": "2026-07-10T12:31:30.657089530Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_SCHEDULED",
+      "taskId": "1048809",
+      "activityTaskScheduledEventAttributes": {
+        "activityId": "1",
+        "activityType": {
+          "name": "call_claude"
+        },
+        "taskQueue": {
+          "name": "kubehealer",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "header": {},
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJtZXNzYWdlcyI6W3siY29udGVudCI6ImhvdyBtYW55IHBvZHMgYXJlIHJ1bm5pbmc/Iiwicm9sZSI6InVzZXIifV0sInN5c3RlbV9wcm9tcHQiOiJZb3UgYXJlIEt1YmVIZWFsZXIsIGFuIEFJIEt1YmVybmV0ZXMgZGVidWdnaW5nIGFzc2lzdGFudCBydW5uaW5nIGluIGEgdGVybWluYWwuXG5cbllvdSBoZWxwIHVzZXJzIHVuZGVyc3RhbmQgYW5kIGZpeCBpc3N1ZXMgaW4gdGhlaXIgS3ViZXJuZXRlcyBjbHVzdGVyLiBZb3UgaGF2ZSB0b29scyB0byBpbnNwZWN0IHBvZHMsIHJlYWQgbG9ncywgY2hlY2sgZXZlbnRzLCBhbmQgcnVuIGhlYWxpbmcgd29ya2Zsb3dzLlxuXG5Ib3cgdG8gYmVoYXZlOlxuLSBVc2UgdG9vbHMgdG8gZ2V0IHJlYWwgZGF0YS4gTmV2ZXIgZ3Vlc3MgcG9kIG5hbWVzLCBzdGF0dXNlcywgb3IgY291bnRzLlxuLSBLZWVwIHJlc3BvbnNlcyBzaG9ydCBcdTIwMTQgdGhpcyBpcyBhIHRlcm1pbmFsLCBub3QgYSBkb2N1bWVudC5cbi0gV2hlbiB0aGUgdXNlciBhc2tzIHRvIGhlYWwvZml4IHBvZHMsIHVzZSBzdGFydF9oZWFsaW5nIHRvIHNjYW4gYW5kIGRpYWdub3NlLlxuLSBBZnRlciBzdGFydF9oZWFsaW5nLCBwcmVzZW50IHRoZSBkaWFnbm9zZXMgY2xlYXJseSBhbmQgYXNrIHdoaWNoIGZpeGVzIHRvIGFwcHJvdmUuXG4tIEZvciBcInNraXBcIiBhY3Rpb25zIChsaWtlIG1pc3NpbmcgQ29uZmlnTWFwKSwgYXV0b21hdGljYWxseSByZWplY3QgdGhlbSBhbmQgZXhwbGFpbiB3aHkuXG4tIFdoZW4gdGhlIHVzZXIgc2F5cyBcImFwcHJvdmUgYWxsXCIgb3IgXCJmaXggZXZlcnl0aGluZ1wiLCBhcHByb3ZlIGFsbCBmaXhhYmxlIHBvZHMgYW5kIHJlamVjdCBza2lwLW9ubHkgb25lcy5cbi0gQWx3YXlzIHRlbGwgdGhlIHVzZXIgd2hhdCB5b3UncmUgYWJvdXQgdG8gZG8gYmVmb3JlIHRha2luZyBhY3Rpb24uXG5cbkhlYWxpbmcgd29ya2Zsb3c6XG4xLiBzdGFydF9oZWFsaW5nIC0+IHNjYW5zIGNsdXN0ZXIsIGRpYWdub3NlcyB3aXRoIEFJLCByZXR1cm5zIHByb3Bvc2VkIGZpeGVzXG4yLiBhcHByb3ZlX2ZpeCAvIHJlamVjdF9maXggLT4gZm9yIGVhY2ggcG9kLCB0aGVuIGZpeGVzIGFyZSBleGVjdXRlZCBhdXRvbWF0aWNhbGx5XG4iLCJ0b29scyI6W3siZGVzY3JpcHRpb24iOiJMaXN0IGFsbCBwb2RzIGluIGEgbmFtZXNwYWNlIHdpdGggc3RhdHVzLCByZWFkaW5lc3MsIGFuZCByZXN0YXJ0IGNvdW50LiIsImlucHV0X3NjaGVtYSI6eyJwcm9wZXJ0aWVzIjp7Im5hbWVzcGFjZSI6eyJkZWZhdWx0IjoiZGVmYXVsdCIsImRlc2NyaXB0aW9uIjoiS3ViZXJuZXRlcyBuYW1lc3BhY2UiLCJ0eXBlIjoic3RyaW5nIn19LCJ0eXBlIjoib2JqZWN0In0sIm5hbWUiOiJsaXN0X3BvZHMifSx7ImRlc2NyaXB0aW9uIjoiR2V0IGRldGFpbGVkIGluZm8gYWJvdXQgYSBzcGVjaWZpYyBwb2Q6IHN0YXR1cywgY29udGFpbmVyIHN0YXRlcywgY29uZGl0aW9ucywgcmVzb3VyY2UgbGltaXRzLiIsImlucHV0X3NjaGVtYSI6eyJwcm9wZXJ0aWVzIjp7Im5hbWVzcGFjZSI6eyJkZWZhdWx0IjoiZGVmYXVsdCIsImRlc2NyaXB0aW9uIjoiS3ViZXJuZXRlcyBuYW1lc3BhY2UiLCJ0eXBlIjoic3RyaW5nIn0sInBvZF9uYW1lIjp7ImRlc2NyaXB0aW9uIjoiTmFtZSBvZiB0aGUgcG9kIiwidHlwZSI6InN0cmluZyJ9fSwicmVxdWlyZWQiOlsicG9kX25hbWUiXSwidHlwZSI6Im9iamVjdCJ9LCJuYW1lIjoiZ2V0X3BvZF9kZXRhaWxzIn0seyJkZXNjcmlwdGlvbiI6IkdldCByZWNlbnQgbG9nIG91dHB1dCBmcm9tIGEgcG9kLiIsImlucHV0X3NjaGVtYSI6eyJwcm9wZXJ0aWVzIjp7Im5hbWVzcGFjZSI6eyJkZWZhdWx0IjoiZGVmYXVsdCIsImRlc2NyaXB0aW9uIjoiS3ViZXJuZXRlcyBuYW1lc3BhY2UiLCJ0eXBlIjoic3RyaW5nIn0sInBvZF9uYW1lIjp7ImRlc2NyaXB0aW9uIjoiTmFtZSBvZiB0aGUgcG9kIiwidHlwZSI6InN0cmluZyJ9LCJ0YWlsX2xpbmVzIjp7ImRlZmF1bHQiOjUwLCJkZXNjcmlwdGlvbiI6Ik51bWJlciBvZiByZWNlbnQgbGluZXMiLCJ0eXBlIjoiaW50ZWdlciJ9fSwicmVxdWlyZWQiOlsicG9kX25hbWUiXSwidHlwZSI6Im9iamVjdCJ9LCJuYW1lIjoiZ2V0X3BvZF9sb2dzIn0seyJkZXNjcmlwdGlvbiI6IkdldCBLdWJlcm5ldGVzIGV2ZW50cyBmb3IgYSBwb2QgKHdhcm5pbmdzLCBlcnJvcnMsIHNjaGVkdWxpbmcgaW5mbykuIiwiaW5wdXRfc2NoZW1hIjp7InByb3BlcnRpZXMiOnsibmFtZXNwYWNlIjp7ImRlZmF1bHQiOiJkZWZhdWx0IiwiZGVzY3JpcHRpb24iOiJLdWJlcm5ldGVzIG5hbWVzcGFjZSIsInR5cGUiOiJzdHJpbmcifSwicG9kX25hbWUiOnsiZGVzY3JpcHRpb24iOiJOYW1lIG9mIHRoZSBwb2QiLCJ0eXBlIjoic3RyaW5nIn19LCJyZXF1aXJlZCI6WyJwb2RfbmFtZSJdLCJ0eXBlIjoib2JqZWN0In0sIm5hbWUiOiJnZXRfcG9kX2V2ZW50cyJ9LHsiZGVzY3JpcHRpb24iOiJTdGFydCBoZWFsaW5nOiBzY2FuIGZvciB1bmhlYWx0aHkgcG9kcywgZGlhZ25vc2UgZWFjaCB3aXRoIEFJLCByZXR1cm4gcHJvcG9zZWQgZml4ZXMuIFRoZW4gdXNlIGFwcHJvdmVfZml4IG9yIHJlamVjdF9maXggZm9yIGVhY2ggcG9kLiIsImlucHV0X3NjaGVtYSI6eyJwcm9wZXJ0aWVzIjp7Im5hbWVzcGFjZSI6eyJkZWZhdWx0IjoiZGVmYXVsdCIsImRlc2NyaXB0aW9uIjoiS3ViZXJuZXRlcyBuYW1lc3BhY2UgdG8gaGVhbCIsInR5cGUiOiJzdHJpbmcifX0sInR5cGUiOiJvYmplY3QifSwibmFtZSI6InN0YXJ0X2hlYWxpbmcifSx7ImRlc2NyaXB0aW9uIjoiQXBwcm92ZSBhIHByb3Bvc2VkIGZpeCBmb3IgYSBwb2QuIElmIGFsbCBwb2RzIGFyZSBkZWNpZGVkLCBleGVjdXRlcyBmaXhlcyBhbmQgcmV0dXJucyByZXN1bHRzLiIsImlucHV0X3NjaGVtYSI6eyJwcm9wZXJ0aWVzIjp7InBvZF9uYW1lIjp7ImRlc2NyaXB0aW9uIjoiUG9kIG5hbWUgdG8gYXBwcm92ZSIsInR5cGUiOiJzdHJpbmcifX0sInJlcXVpcmVkIjpbInBvZF9uYW1lIl0sInR5cGUiOiJvYmplY3QifSwibmFtZSI6ImFwcHJvdmVfZml4In0seyJkZXNjcmlwdGlvbiI6IlJlamVjdCBhIHByb3Bvc2VkIGZpeCBmb3IgYSBwb2QuIFRoZSBwb2Qgd29uJ3QgYmUgbW9kaWZpZWQuIElmIGFsbCBwb2RzIGFyZSBkZWNpZGVkLCByZXR1cm5zIHJlc3VsdHMuIiwiaW5wdXRfc2NoZW1hIjp7InByb3BlcnRpZXMiOnsicG9kX25hbWUiOnsiZGVzY3JpcHRpb24iOiJQb2QgbmFtZSB0byByZWplY3QiLCJ0eXBlIjoic3RyaW5nIn19LCJyZXF1aXJlZCI6WyJwb2RfbmFtZSJdLCJ0eXBlIjoib2JqZWN0In0sIm5hbWUiOiJyZWplY3RfZml4In1dfQ=="
+            }
+          ]
+        },
+        "scheduleToCloseTimeout": "0s",
+        "scheduleToStartTimeout": "0s",
+        "startToCloseTimeout": "120s",
+        "heartbeatTimeout": "0s",
+        "workflowTaskCompletedEventId": "7",
+        "retryPolicy": {
+          "initialInterval": "1s",
+          "backoffCoefficient": 2,
+          "maximumInterval": "100s",
+          "maximumAttempts": 3
+        },
+        "useWorkflowBuildId": true,
+        "priority": {}
+      }
+    },
+    {
+      "eventId": "10",
+      "eventTime": "2026-07-10T12:31:30.662964965Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_STARTED",
+      "taskId": "1048815",
+      "activityTaskStartedEventAttributes": {
+        "scheduledEventId": "9",
+        "identity": "37356@Deepak",
+        "requestId": "23c294bd-568a-4f85-a359-ddc2884ad113",
+        "attempt": 1,
+        "workerVersion": {
+          "buildId": "61065c3d2406bf8de64eb171c10925cf"
+        }
+      }
+    },
+    {
+      "eventId": "11",
+      "eventTime": "2026-07-10T12:31:31.429783069Z",
+      "eventType": "EVENT_TYPE_ACTIVITY_TASK_FAILED",
+      "taskId": "1048816",
+      "activityTaskFailedEventAttributes": {
+        "failure": {
+          "message": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CctP3w8t5ddMcw2hGBmus'}",
+          "stackTrace": "  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/temporalio/worker/_activity.py\", line 359, in _handle_start_activity_task\n    result = await self._execute_activity(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/temporalio/worker/_activity.py\", line 714, in _execute_activity\n    return await impl.execute_activity(input)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/temporalio/worker/_activity.py\", line 909, in execute_activity\n    return await input.fn(*input.args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/activities/chat_activities.py\", line 52, in call_claude\n    raise ApplicationError(f\"Anthropic API error: {e}\", non_retryable=True)\n",
+          "cause": {
+            "message": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CctP3w8t5ddMcw2hGBmus'}",
+            "stackTrace": "  File \"/home/malathi/projects/kubehealer/activities/chat_activities.py\", line 38, in call_claude\n    response = ai.messages.create(\n               ^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/anthropic/_utils/_utils.py\", line 294, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/anthropic/resources/messages/messages.py\", line 1050, in create\n    return self._post(\n           ^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/anthropic/_base_client.py\", line 1536, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/anthropic/_base_client.py\", line 1195, in request\n    raise self._make_status_error_from_response(response) from None\n",
+            "applicationFailureInfo": {
+              "type": "BadRequestError"
+            }
+          },
+          "applicationFailureInfo": {
+            "nonRetryable": true
+          }
+        },
+        "scheduledEventId": "9",
+        "startedEventId": "10",
+        "identity": "37356@Deepak",
+        "retryState": "RETRY_STATE_NON_RETRYABLE_FAILURE"
+      }
+    },
+    {
+      "eventId": "12",
+      "eventTime": "2026-07-10T12:31:31.429824487Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1048817",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "37356@Deepak-d9fad90d041c41e0abb619e767d5f995",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "kubehealer"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "13",
+      "eventTime": "2026-07-10T12:31:31.431990527Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1048821",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "12",
+        "identity": "37356@Deepak",
+        "requestId": "f19212b1-be69-489a-918e-d908f274c297",
+        "historySizeBytes": "7390",
+        "workerVersion": {
+          "buildId": "61065c3d2406bf8de64eb171c10925cf"
+        }
+      }
+    },
+    {
+      "eventId": "14",
+      "eventTime": "2026-07-10T12:31:31.442429817Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1048825",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "12",
+        "startedEventId": "13",
+        "identity": "37356@Deepak",
+        "workerVersion": {
+          "buildId": "61065c3d2406bf8de64eb171c10925cf"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "15",
+      "eventTime": "2026-07-10T12:31:31.444243811Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1048826",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "f4bbe455-59c2-40e7-aefa-948e2c17669c",
+          "identity": "38338@Deepak"
+        },
+        "acceptedEventId": "8",
+        "outcome": {
+          "failure": {
+            "message": "Activity task failed",
+            "cause": {
+              "message": "Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CctP3w8t5ddMcw2hGBmus'}",
+              "stackTrace": "  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/temporalio/worker/_activity.py\", line 359, in _handle_start_activity_task\n    result = await self._execute_activity(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/temporalio/worker/_activity.py\", line 714, in _execute_activity\n    return await impl.execute_activity(input)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/temporalio/worker/_activity.py\", line 909, in execute_activity\n    return await input.fn(*input.args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/activities/chat_activities.py\", line 52, in call_claude\n    raise ApplicationError(f\"Anthropic API error: {e}\", non_retryable=True)\n",
+              "cause": {
+                "message": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CctP3w8t5ddMcw2hGBmus'}",
+                "stackTrace": "  File \"/home/malathi/projects/kubehealer/activities/chat_activities.py\", line 38, in call_claude\n    response = ai.messages.create(\n               ^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/anthropic/_utils/_utils.py\", line 294, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/anthropic/resources/messages/messages.py\", line 1050, in create\n    return self._post(\n           ^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/anthropic/_base_client.py\", line 1536, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n  File \"/home/malathi/projects/kubehealer/.venv/lib/python3.12/site-packages/anthropic/_base_client.py\", line 1195, in request\n    raise self._make_status_error_from_response(response) from None\n",
+                "applicationFailureInfo": {
+                  "type": "BadRequestError"
+                }
+              },
+              "applicationFailureInfo": {
+                "nonRetryable": true
+              }
+            },
+            "activityFailureInfo": {
+              "scheduledEventId": "9",
+              "startedEventId": "10",
+              "identity": "37356@Deepak",
+              "activityType": {
+                "name": "call_claude"
+              },
+              "activityId": "1",
+              "retryState": "RETRY_STATE_NON_RETRYABLE_FAILURE"
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "16",
+      "eventTime": "2026-07-10T12:50:39.855246152Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_TERMINATED",
+      "taskId": "1048861",
+      "workflowExecutionTerminatedEventAttributes": {
+        "reason": "start fresh",
+        "identity": "temporal-cli:malathi@Deepak"
+      }
+    }
+  ]
+}
